@@ -1,8 +1,3 @@
-
-import Pkg
-Pkg.add("JuMP")
-Pkg.add("GLPK")
-
 using JuMP
 using GLPK
 model = Model(GLPK.Optimizer)
@@ -21,7 +16,6 @@ println(" Minimum Vertex Cover result: $(objective_value(model))")
 for i in 1:k
     println("X",i ,":  ", JuMP.value(x[i]))
 end
-println("_______________________________________________")
 
 println("optimal cover for the given graph is  ")
 for i in 1:k
